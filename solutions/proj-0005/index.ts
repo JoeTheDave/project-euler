@@ -24,8 +24,6 @@ export const smallestMultiple = () => {
   for (let n = 20; n >= 2; n--) {
     primeFactors = mergePrimeFactors(primeFactors, getPrimeFactors(n));
   }
-
   const result = primeFactors.reduce((product, val) => product * val, 1);
-  console.log(result);
   return result;
 };
