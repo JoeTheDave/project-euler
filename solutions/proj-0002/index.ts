@@ -1,4 +1,4 @@
-// Even Fibonacci numbers
+// Even Fibonacci Numbers
 // https://projecteuler.net/problem=2
 
 class Fibonacci {

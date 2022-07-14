@@ -1,4 +1,4 @@
-// Even Fibonacci numbers
+// Multiples of 3 or 5
 // https://projecteuler.net/problem=1
 
 export const multiplesOf3or5 = () => {
