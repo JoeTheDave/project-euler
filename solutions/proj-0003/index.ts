@@ -12,8 +12,7 @@ const getPrimeFactor = (product: number) => {
   return factor;
 };
 
-export const largestPrimeFactor = () => {
-  let product = 600851475143;
+export const getPrimeFactors = (product: number) => {
   const primeFactors = [];
   do {
     const primeFactor = getPrimeFactor(product);
@@ -23,5 +22,11 @@ export const largestPrimeFactor = () => {
   primeFactors.pop();
   primeFactors.push(product);
 
+  return primeFactors;
+};
+
+export const largestPrimeFactor = () => {
+  const product = 600851475143;
+  const primeFactors = getPrimeFactors(product);
   return Math.max(...primeFactors);
 };
