@@ -20,3 +20,4 @@ npm run generate-solution-files
 
 - [ ] Ensure eslint is working correctly
 - [ ] generate-solution-files script will not presently account for titles that begin with numbers
+- [ ] solution 10 test runs extremely slow
