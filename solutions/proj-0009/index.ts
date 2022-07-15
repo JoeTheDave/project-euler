@@ -12,8 +12,4 @@ export const specialPythagoreanTriplet = () => {
   }
 };
 
-// a < b < c | all numbers are integers
-// a2 + b2 = c2
-// a + b + c = 1000
-
 specialPythagoreanTriplet();

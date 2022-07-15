@@ -23,7 +23,3 @@ export const summationOfPrimes = () => {
   primes.pop();
   return primes.reduce((sum, prime) => sum + prime, 0);
 };
-
-const result = summationOfPrimes();
-
-console.log(result);
