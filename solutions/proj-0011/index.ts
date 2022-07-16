@@ -88,15 +88,11 @@ export const largestProductInAGrid = () => {
         data[i] * data[i + 21] * data[i + 42] * data[i + 63],
       );
     }
-
     if (i % 20 <= 16 && i >= 60) {
       largestProduct = Math.max(
         largestProduct,
         data[i] * data[i - 19] * data[i - 38] * data[i - 57],
       );
-    }
-    if (largestProduct === 70600674) {
-      console.log(i, data[i]);
     }
   });
   return largestProduct;

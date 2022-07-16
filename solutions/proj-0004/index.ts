@@ -1,10 +1,10 @@
 // Largest Palindrome Product
 // https://projecteuler.net/problem=4
 
-const isPalindrome = (num: number) => {
-  const numStr = `${num}`;
-  const reversed = numStr.split('').reverse().join('');
-  return numStr === reversed;
+export const isPalindrome = (term: string | number) => {
+  const termString = typeof term === 'string' ? term : `${term}`;
+  const reversed = termString.split('').reverse().join('');
+  return termString === reversed;
 };
 
 export const largestPalindromeProduct = () => {
