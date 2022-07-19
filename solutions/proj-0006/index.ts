@@ -6,8 +6,8 @@ export const sumSquareDifference = () => {
   let sumOfSquares = 0;
   for (let n = 1; n <= 100; n++) {
     sum += n;
-    sumOfSquares += Math.pow(n, 2);
+    sumOfSquares += n ** 2;
   }
-  const squareOfSum = Math.pow(sum, 2);
+  const squareOfSum = sum ** 2;
   return squareOfSum - sumOfSquares;
 };
