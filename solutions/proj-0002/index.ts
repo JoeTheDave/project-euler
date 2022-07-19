@@ -1,15 +1,7 @@
 // Even Fibonacci Numbers
 // https://projecteuler.net/problem=2
 
-export const getFibonacciSequence = (max: number) => {
-  const fibonacci = [1, 2];
-  do {
-    fibonacci.push(
-      fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2],
-    );
-  } while (fibonacci[fibonacci.length - 1] <= max);
-  return fibonacci;
-};
+import { getFibonacciSequence } from '../util';
 
 export const evenFibonacciNumbers = () => {
   const fibonacci = getFibonacciSequence(4000000);

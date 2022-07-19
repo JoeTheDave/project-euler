@@ -1,10 +1,10 @@
 // Summation Of Primes
 // https://projecteuler.net/problem=10
 
-import util from '../util';
+import { PrimeGenerator } from '../util';
 
 export const summationOfPrimes = () => {
-  const generator = new util.PrimeGenerator();
+  const generator = new PrimeGenerator();
   do {
     generator.getNext();
   } while (generator.getCurrent() < 2000000);

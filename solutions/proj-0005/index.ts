@@ -1,7 +1,7 @@
 // Smallest Multiple
 // https://projecteuler.net/problem=5
 
-import util from '../util';
+import { getPrimeFactors } from '../util';
 
 const mergePrimeFactors = (
   accumlatedPrimeFactors: number[],
@@ -22,7 +22,7 @@ const mergePrimeFactors = (
 export const smallestMultiple = () => {
   let primeFactors = [];
   for (let n = 20; n >= 2; n--) {
-    primeFactors = mergePrimeFactors(primeFactors, util.getPrimeFactors(n));
+    primeFactors = mergePrimeFactors(primeFactors, getPrimeFactors(n));
   }
   return primeFactors.reduce((product, val) => product * val, 1);
 };

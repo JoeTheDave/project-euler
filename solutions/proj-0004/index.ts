@@ -1,11 +1,7 @@
 // Largest Palindrome Product
 // https://projecteuler.net/problem=4
 
-export const isPalindrome = (term: string | number) => {
-  const termString = typeof term === 'string' ? term : `${term}`;
-  const reversed = termString.split('').reverse().join('');
-  return termString === reversed;
-};
+import { isPalindrome } from '../util';
 
 export const largestPalindromeProduct = () => {
   let highestPalindrome = 0;

@@ -1,6 +1,8 @@
 // Large Sum
 // https://projecteuler.net/problem=13
 
+import { addLargeNumbers } from '../util';
+
 const largeNumbers = [
   '37107287533902102798797998220837590246510135740250',
   '46376937677490009712648124896970078050417018260538',
@@ -103,30 +105,6 @@ const largeNumbers = [
   '20849603980134001723930671666823555245252804609722',
   '53503534226472524250874054075591789781264330331690',
 ];
-
-export const addLargeNumbers = (num1: string, num2: string) => {
-  const num1Chars = num1.split('').reverse();
-  const num2Chars = num2.split('').reverse();
-
-  let additionResult = [];
-  let carryThe = '0';
-  for (let i = 0; i < Math.max(num1Chars.length, num2Chars.length); i++) {
-    const smallAddition = `${
-      (parseInt(num1Chars[i]) || 0) +
-      (parseInt(num2Chars[i]) || 0) +
-      (parseInt(carryThe) || 0)
-    }`
-      .split('')
-      .reverse();
-
-    additionResult.push(smallAddition[0]);
-    carryThe = smallAddition[1] ? smallAddition[1] : '0';
-  }
-  if (carryThe !== '0') {
-    additionResult.push(carryThe);
-  }
-  return additionResult.reverse().join('');
-};
 
 export const largeSum = () => {
   return largeNumbers
