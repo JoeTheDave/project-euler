@@ -1,25 +1,14 @@
 // Summation Of Primes
 // https://projecteuler.net/problem=10
 
+import util from '../util';
+
 export const summationOfPrimes = () => {
-  let candidate = 8;
-  const primes = [2, 3, 5, 7];
+  const generator = new util.PrimeGenerator();
   do {
-    let isPrime = true;
-    for (let n = 0; n < primes.length; n++) {
-      if (candidate % primes[n] === 0) {
-        isPrime = false;
-        break;
-      }
-      if (primes[n] > Math.ceil(candidate / 2)) {
-        break;
-      }
-    }
-    if (isPrime) {
-      primes.push(candidate);
-    }
-    candidate++;
-  } while (primes[primes.length - 1] < 2000000);
+    generator.getNext();
+  } while (generator.getCurrent() < 2000000);
+  const primes = generator.primes;
   primes.pop();
   return primes.reduce((sum, prime) => sum + prime, 0);
 };
