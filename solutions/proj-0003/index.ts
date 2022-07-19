@@ -19,10 +19,7 @@ export const getPrimeFactors = (product: number) => {
     primeFactors.push(primeFactor);
     product /= primeFactor;
   } while (primeFactors[primeFactors.length - 1] !== 1);
-  primeFactors.pop();
-  primeFactors.push(product);
-
-  return primeFactors;
+  return [...primeFactors.splice(0, primeFactors.length - 1), product];
 };
 
 export const largestPrimeFactor = () => {
