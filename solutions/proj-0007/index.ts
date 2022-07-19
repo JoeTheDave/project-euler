@@ -2,23 +2,23 @@
 // https://projecteuler.net/problem=7
 
 export const tenThousandAndFirstPrime = () => {
-  let candidate = 8;
-  const primes = [2, 3, 5, 7];
+  let candidate = 3;
+  const primes = [2];
   do {
     let isPrime = true;
     for (let n = 0; n < primes.length; n++) {
-      if (candidate % primes[n] === 0) {
-        isPrime = false;
+      if (primes[n] > Math.sqrt(candidate)) {
         break;
       }
-      if (primes[n] > Math.ceil(candidate / 2)) {
+      if (candidate % primes[n] === 0) {
+        isPrime = false;
         break;
       }
     }
     if (isPrime) {
       primes.push(candidate);
     }
-    candidate++;
+    candidate += 2;
   } while (primes.length < 10001);
   return primes[10000];
 };
