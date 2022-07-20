@@ -1,9 +1,7 @@
 export const getFibonacciSequence = (max: number) => {
   const fibonacci = [1, 2];
   do {
-    fibonacci.push(
-      fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2],
-    );
+    fibonacci.push(fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2]);
   } while (fibonacci[fibonacci.length - 1] <= max);
   return fibonacci;
 };
@@ -76,15 +74,12 @@ export class PrimeGenerator {
 }
 
 export const getDivisorsList = (num: number) => {
-  const uniqPrimeFactors = [1, ...getPrimeFactors(num)].reduce(
-    (uniqPrimes, prime) => {
-      if (!uniqPrimes.includes(prime)) {
-        uniqPrimes.push(prime);
-      }
-      return uniqPrimes;
-    },
-    [],
-  ) as number[];
+  const uniqPrimeFactors = [1, ...getPrimeFactors(num)].reduce((uniqPrimes, prime) => {
+    if (!uniqPrimes.includes(prime)) {
+      uniqPrimes.push(prime);
+    }
+    return uniqPrimes;
+  }, []) as number[];
 
   let factorsListLength = 0;
   do {
@@ -110,11 +105,7 @@ export const addLargeNumbers = (num1: string, num2: string) => {
   let additionResult = [];
   let carryThe = '0';
   for (let i = 0; i < Math.max(num1Chars.length, num2Chars.length); i++) {
-    const smallAddition = `${
-      (parseInt(num1Chars[i]) || 0) +
-      (parseInt(num2Chars[i]) || 0) +
-      (parseInt(carryThe) || 0)
-    }`
+    const smallAddition = `${(parseInt(num1Chars[i]) || 0) + (parseInt(num2Chars[i]) || 0) + (parseInt(carryThe) || 0)}`
       .split('')
       .reverse();
 
@@ -134,14 +125,18 @@ export const multiplyLargeNumbers = (num1: string, num2: string) => {
   const multiplicationStrings = [];
   num1Chars.forEach((a, ai) => {
     num2Chars.forEach((b, bi) => {
-      multiplicationStrings.push(
-        `${parseInt(a) * parseInt(b)}${''.padStart(ai + bi, '0')}`,
-      );
+      multiplicationStrings.push(`${parseInt(a) * parseInt(b)}${''.padStart(ai + bi, '0')}`);
     });
   });
 
-  return multiplicationStrings.reduce(
-    (sum, num) => addLargeNumbers(sum, num),
-    '0',
-  );
+  return multiplicationStrings.reduce((sum, num) => addLargeNumbers(sum, num), '0');
+};
+
+export const maximumPyramidPathSum = (pyramid: number[][]) => {
+  return pyramid.reverse().reduce((prevRow, currentRow) => {
+    if (!prevRow.length) {
+      return currentRow;
+    }
+    return currentRow.map((val, idx) => val + Math.max(prevRow[idx], prevRow[idx + 1]));
+  }, [])[0];
 };

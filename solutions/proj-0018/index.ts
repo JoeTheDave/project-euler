@@ -1,6 +1,8 @@
 // Maximum Path Sum I
 // https://projecteuler.net/problem=18
 
+import { maximumPyramidPathSum } from '../util';
+
 const pyramid = [
   [75],
   [95, 64],
@@ -20,10 +22,5 @@ const pyramid = [
 ];
 
 export const maximumPathSumI = () => {
-  return pyramid.reverse().reduce((prevRow, currentRow) => {
-    if (!prevRow.length) {
-      return currentRow;
-    }
-    return currentRow.map((val, idx) => val + Math.max(prevRow[idx], prevRow[idx + 1]));
-  }, [])[0];
+  return maximumPyramidPathSum(pyramid);
 };
