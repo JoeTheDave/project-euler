@@ -8,9 +8,7 @@ const getNextCollatzNumber = (num: number) => {
 const generateCollatzSequence = (seed: number) => {
   const collatzSequence = [seed];
   do {
-    collatzSequence.push(
-      getNextCollatzNumber(collatzSequence[collatzSequence.length - 1]),
-    );
+    collatzSequence.push(getNextCollatzNumber(collatzSequence[collatzSequence.length - 1]));
   } while (collatzSequence[collatzSequence.length - 1] !== 1);
   return collatzSequence;
 };
@@ -20,10 +18,7 @@ export const longestCollatzSequence = () => {
   let longestCollatzSeed = 0;
   for (let seed = 2; seed < 1000000; seed++) {
     const collatzResult = generateCollatzSequence(seed);
-    longestCollatzResults = Math.max(
-      longestCollatzResults,
-      collatzResult.length,
-    );
+    longestCollatzResults = Math.max(longestCollatzResults, collatzResult.length);
     if (longestCollatzResults === collatzResult.length) {
       longestCollatzSeed = seed;
     }

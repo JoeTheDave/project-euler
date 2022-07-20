@@ -39,17 +39,13 @@ const build2DigitNum = (num) => {
     return baseDigitMap[num];
   }
   const nums = `${num}`.split('');
-  return `${tensDigitMap[nums[0]]}${
-    nums[1] !== '0' ? `-${baseDigitMap[nums[1]]}` : ''
-  }`;
+  return `${tensDigitMap[nums[0]]}${nums[1] !== '0' ? `-${baseDigitMap[nums[1]]}` : ''}`;
 };
 
 const build3DigitNum = (num) => {
   const nums = `${num}`.split('');
   const twoDigitNum = parseInt(nums[1] + nums[2]);
-  return `${baseDigitMap[nums[0]]} hundred${
-    twoDigitNum > 0 ? ` and ${build2DigitNum(twoDigitNum)}` : ''
-  } `;
+  return `${baseDigitMap[nums[0]]} hundred${twoDigitNum > 0 ? ` and ${build2DigitNum(twoDigitNum)}` : ''} `;
 };
 
 const verbalizeNumber = (num: number) => {

@@ -11,9 +11,7 @@ const getPathCountForDimensionalLattice = ([x, y]: number[]): number => {
     } else {
       const path1 = [x - 1, y].sort();
       const path2 = [x, y - 1].sort();
-      result =
-        getPathCountForDimensionalLattice(path1) +
-        getPathCountForDimensionalLattice(path2);
+      result = getPathCountForDimensionalLattice(path1) + getPathCountForDimensionalLattice(path2);
     }
     responseCache[`${x}|${y}`] = result;
   }

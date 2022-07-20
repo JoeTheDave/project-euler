@@ -5,7 +5,5 @@ import { getFibonacciSequence } from '../util';
 
 export const evenFibonacciNumbers = () => {
   const fibonacci = getFibonacciSequence(4000000);
-  return fibonacci
-    .filter((n) => n % 2 === 0)
-    .reduce((sum, num) => sum + num, 0);
+  return fibonacci.filter((n) => n % 2 === 0).reduce((sum, num) => sum + num, 0);
 };

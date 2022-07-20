@@ -3,10 +3,7 @@
 
 import { getPrimeFactors } from '../util';
 
-const mergePrimeFactors = (
-  accumlatedPrimeFactors: number[],
-  newPrimeFactors: number[],
-) => {
+const mergePrimeFactors = (accumlatedPrimeFactors: number[], newPrimeFactors: number[]) => {
   const primes = [...accumlatedPrimeFactors];
   const additions = [];
   newPrimeFactors.forEach((f) => {
