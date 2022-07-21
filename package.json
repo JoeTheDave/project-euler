@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "generate-solution-files": "ts-node ./generate-solution-files.ts"
+    "generate-solution-files": "ts-node ./generate-solution-files.ts",
+    "exec": "ts-node ./exec-solution.ts"
   },
   "author": "Joe Davis - joethedave@gmail.com",
   "license": "MIT",
