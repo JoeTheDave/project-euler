@@ -140,3 +140,11 @@ export const maximumPyramidPathSum = (pyramid: number[][]) => {
     return currentRow.map((val, idx) => val + Math.max(prevRow[idx], prevRow[idx + 1]));
   }, [])[0];
 };
+
+export const factorial = (num: number) => {
+  let product = '1';
+  for (let x = 1; x <= num; x++) {
+    product = multiplyLargeNumbers(product, `${x}`);
+  }
+  return product;
+};
