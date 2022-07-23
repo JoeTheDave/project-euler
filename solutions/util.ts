@@ -148,3 +148,8 @@ export const factorial = (num: number) => {
   }
   return product;
 };
+
+export const sumofDivisors = (num: number) =>
+  getDivisorsList(num)
+    .slice(0, -1)
+    .reduce((sum, num) => sum + num, 0);
