@@ -1,22 +1,35 @@
 // Non Abundant Sums
 // https://projecteuler.net/problem=23
 
-// import { sumofDivisors } from '../util';
+import { sumofDivisors } from '../util';
 
-// const maxNonAbundantSum = 20161;
+const maxNumber = 28123;
 
 export const nonAbundantSums = () => {
-  // const abundantNums = []; // 4994
-  // for (let n = 10; n <= 20161; n++) {
-  //   const sum = sumofDivisors(n);
-  //   if (sum > n) {
-  //     abundantNums.push(n);
-  //   }
-  // }
+  const abundantNums = [];
+  for (let n = 10; n <= maxNumber; n++) {
+    const sum = sumofDivisors(n);
+    if (sum > n) {
+      abundantNums.push(n);
+    }
+  }
 
-  // const maxAbundantNum = abundantNums.reduce((max, num) => Math.max(max, num), 0);
+  const abundantSums = {};
+  for (let a = 0; a < abundantNums.length; a++) {
+    for (let b = 0; b < abundantNums.length; b++) {
+      const sum = abundantNums[a] + abundantNums[b];
+      if (sum <= maxNumber) {
+        abundantSums[sum] = 1;
+      }
+    }
+  }
 
-  // console.log(maxAbundantNum);
+  let nonAbundantSums = [];
+  for (let x = 1; x <= maxNumber; x++) {
+    if (!abundantSums[x]) {
+      nonAbundantSums.push(x);
+    }
+  }
 
-  return 0;
+  return nonAbundantSums.reduce((sum, num) => sum + num, 0);
 };
