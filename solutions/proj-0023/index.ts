@@ -16,7 +16,7 @@ export const nonAbundantSums = () => {
 
   const abundantSums = {};
   for (let a = 0; a < abundantNums.length; a++) {
-    for (let b = 0; b < abundantNums.length; b++) {
+    for (let b = 0; b < a; b++) {
       const sum = abundantNums[a] + abundantNums[b];
       if (sum <= maxNumber) {
         abundantSums[sum] = 1;
