@@ -144,6 +144,20 @@ export const multiplyLargeNumbers = (num1: string, num2: string) => {
   return multiplicationStrings.reduce((sum, num) => addLargeNumbers(sum, num), '0');
 };
 
+export const exponentLargeNumbers = (base: number, power: number) => {
+  if (base === 0 || base === 1) {
+    return `${base}`;
+  }
+  if (power === 0) {
+    return '1';
+  }
+  let result = `${base}`;
+  for (let p = 2; p <= power; p++) {
+    result = multiplyLargeNumbers(result, `${base}`);
+  }
+  return result;
+};
+
 export const maximumPyramidPathSum = (pyramid: number[][]) => {
   return pyramid.reverse().reduce((prevRow, currentRow) => {
     if (!prevRow.length) {
