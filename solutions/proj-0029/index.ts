@@ -1,8 +1,6 @@
 // Distinct Powers
 // https://projecteuler.net/problem=29
 
-import { exponentLargeNumbers } from '../util';
-
 export const distinctPowers = () => {
   const results = {};
   for (let a = 2; a <= 100; a++) {
