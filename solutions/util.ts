@@ -36,14 +36,25 @@ export const isPalindrome = (term: string | number) => {
 export class PrimeGenerator {
   primes: number[];
   initialPrimes: number[];
+  primeDictionary: { [key: number]: boolean };
 
   constructor() {
     this.primes = [];
     this.initialPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+    this.primeDictionary = {};
   }
 
   getCurrent() {
     return this.primes[this.primes.length - 1];
+  }
+
+  isPrime(num) {
+    if (num > this.getCurrent() || this.primes.length === 0) {
+      do {
+        this.getNext();
+      } while (num > this.getCurrent());
+    }
+    return !!this.primeDictionary[num];
   }
 
   getNext() {
@@ -69,6 +80,7 @@ export class PrimeGenerator {
         }
       } while (this.getCurrent() !== candidate);
     }
+    this.primeDictionary[this.getCurrent()] = true;
     return this.getCurrent();
   }
 }
