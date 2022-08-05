@@ -172,7 +172,7 @@ export const factorial = (num: number) => {
   for (let x = 1; x <= num; x++) {
     product = multiplyLargeNumbers(product, `${x}`);
   }
-  return product;
+  return num === 0 ? '0' : product;
 };
 
 export const sumofDivisors = (num: number) =>
