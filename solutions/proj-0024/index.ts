@@ -1,32 +1,32 @@
 // Lexicographic Permutations
 // https://projecteuler.net/problem=24
 
-let instanceNumber = 0;
-let millionthNum = 0;
+let instanceNumber = 0
+let millionthNum = 0
 
 const permuLoop = (options: string[], instance: string[] = []) => {
   if (options.length) {
     for (let x = 0; x < options.length; x++) {
       if (millionthNum) {
-        break;
+        break
       }
-      const permuOptions = [...options];
-      const inst = [...instance];
-      const slice = permuOptions.splice(x, 1)[0];
-      inst.push(slice);
-      permuLoop(permuOptions, inst);
+      const permuOptions = [...options]
+      const inst = [...instance]
+      const slice = permuOptions.splice(x, 1)[0]
+      inst.push(slice)
+      permuLoop(permuOptions, inst)
     }
   } else {
-    instanceNumber++;
+    instanceNumber++
     if (instanceNumber === 1000000) {
-      millionthNum = parseInt(instance.join(''));
+      millionthNum = parseInt(instance.join(''))
     }
-    return instance.join('');
+    return instance.join('')
   }
-};
+}
 
 export const lexicographicPermutations = () => {
-  const options = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  permuLoop(options);
-  return millionthNum;
-};
+  const options = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  permuLoop(options)
+  return millionthNum
+}

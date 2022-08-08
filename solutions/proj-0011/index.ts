@@ -22,24 +22,24 @@ const dataGrid = [
   [20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 4, 36, 16],
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48],
-];
+]
 
 export const largestProductInAGrid = () => {
-  let largestProduct = 0;
-  const data = dataGrid.reduce((list, row) => [...list, ...row], []);
+  let largestProduct = 0
+  const data = dataGrid.reduce((list, row) => [...list, ...row], [])
   data.forEach((_, i) => {
     if (i % 20 <= 16) {
-      largestProduct = Math.max(largestProduct, data[i] * data[i + 1] * data[i + 2] * data[i + 3]);
+      largestProduct = Math.max(largestProduct, data[i] * data[i + 1] * data[i + 2] * data[i + 3])
     }
     if (i < 340) {
-      largestProduct = Math.max(largestProduct, data[i] * data[i + 20] * data[i + 40] * data[i + 60]);
+      largestProduct = Math.max(largestProduct, data[i] * data[i + 20] * data[i + 40] * data[i + 60])
     }
     if (i % 20 <= 16 && i < 340) {
-      largestProduct = Math.max(largestProduct, data[i] * data[i + 21] * data[i + 42] * data[i + 63]);
+      largestProduct = Math.max(largestProduct, data[i] * data[i + 21] * data[i + 42] * data[i + 63])
     }
     if (i % 20 <= 16 && i >= 60) {
-      largestProduct = Math.max(largestProduct, data[i] * data[i - 19] * data[i - 38] * data[i - 57]);
+      largestProduct = Math.max(largestProduct, data[i] * data[i - 19] * data[i - 38] * data[i - 57])
     }
-  });
-  return largestProduct;
-};
+  })
+  return largestProduct
+}

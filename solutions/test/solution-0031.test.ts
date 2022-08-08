@@ -1,8 +1,8 @@
-import { coinSums } from '../proj-0031/index';
+import { coinSums } from '../proj-0031/index'
 
 describe('Solution for Coin Sums', () => {
-  const answer = coinSums();
+  const answer = coinSums()
   it('Should have the correct result', () => {
-    expect(answer).toBe(73682);
-  });
-});
+    expect(answer).toBe(73682)
+  })
+})

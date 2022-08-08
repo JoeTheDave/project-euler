@@ -3,26 +3,26 @@
 
 const monthGenerator = (year: number, month: number) => {
   if ([4, 6, 9, 11].includes(month)) {
-    return 30;
+    return 30
   } else if ([1, 3, 5, 7, 8, 10, 12].includes(month)) {
-    return 31;
+    return 31
   } else {
-    return year % 4 === 0 ? 29 : 28;
+    return year % 4 === 0 ? 29 : 28
   }
-};
+}
 
 export const countingSundays = () => {
-  let weekDay = 2; // Monday
-  let firstMonthDaySundays = 0;
+  let weekDay = 2 // Monday
+  let firstMonthDaySundays = 0
   for (let y = 1901; y <= 2000; y++) {
     for (let m = 1; m <= 12; m++) {
       for (let d = 1; d <= monthGenerator(y, m); d++) {
-        weekDay = weekDay === 7 ? 1 : weekDay + 1; // Jan 1 1901 is Tuesday
+        weekDay = weekDay === 7 ? 1 : weekDay + 1 // Jan 1 1901 is Tuesday
         if (d === 1 && weekDay === 1) {
-          firstMonthDaySundays++;
+          firstMonthDaySundays++
         }
       }
     }
   }
-  return firstMonthDaySundays;
-};
+  return firstMonthDaySundays
+}

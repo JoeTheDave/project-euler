@@ -1,8 +1,8 @@
-import { latticePaths } from '../proj-0015/index';
+import { latticePaths } from '../proj-0015/index'
 
 describe('Solution for Lattice Paths', () => {
-  const answer = latticePaths();
+  const answer = latticePaths()
   it('Should have the correct result', () => {
-    expect(answer).toBe(137846528820);
-  });
-});
+    expect(answer).toBe(137846528820)
+  })
+})

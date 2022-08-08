@@ -8,9 +8,9 @@
 // const all = (2 * x + 1) ** 2 + 3 * (2 * x - 1) ** 2 + 12 * x;
 
 export const numberSpiralDiagonals = () => {
-  let result = 1;
+  let result = 1
   for (let x = 1; x <= 500; x++) {
-    result += (2 * x + 1) ** 2 + 3 * (2 * x - 1) ** 2 + 12 * x;
+    result += (2 * x + 1) ** 2 + 3 * (2 * x - 1) ** 2 + 12 * x
   }
-  return result;
-};
+  return result
+}

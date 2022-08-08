@@ -1,8 +1,8 @@
-import { numberSpiralDiagonals } from '../proj-0028/index';
+import { numberSpiralDiagonals } from '../proj-0028/index'
 
 describe('Solution for Number Spiral Diagonals', () => {
-  const answer = numberSpiralDiagonals();
+  const answer = numberSpiralDiagonals()
   it('Should have the correct result', () => {
-    expect(answer).toBe(669171001);
-  });
-});
+    expect(answer).toBe(669171001)
+  })
+})

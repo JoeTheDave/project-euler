@@ -1,8 +1,8 @@
-import { amicableNumbers } from '../proj-0021/index';
+import { amicableNumbers } from '../proj-0021/index'
 
 describe('Solution for Amicable Numbers', () => {
-  const answer = amicableNumbers();
+  const answer = amicableNumbers()
   it('Should have the correct result', () => {
-    expect(answer).toBe(31626);
-  });
-});
+    expect(answer).toBe(31626)
+  })
+})

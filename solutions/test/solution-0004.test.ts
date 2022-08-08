@@ -1,8 +1,8 @@
-import { largestPalindromeProduct } from '../proj-0004/index';
+import { largestPalindromeProduct } from '../proj-0004/index'
 
 describe('Solution for Largest Palindrome Product', () => {
-  const answer = largestPalindromeProduct();
+  const answer = largestPalindromeProduct()
   it('Should have the correct result', () => {
-    expect(answer).toBe(906609);
-  });
-});
+    expect(answer).toBe(906609)
+  })
+})

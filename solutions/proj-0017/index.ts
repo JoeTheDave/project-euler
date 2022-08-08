@@ -21,7 +21,7 @@ const baseDigitMap = {
   17: 'seventeen',
   18: 'eighteen',
   19: 'nineteen',
-};
+}
 
 const tensDigitMap = {
   2: 'twenty',
@@ -32,36 +32,36 @@ const tensDigitMap = {
   7: 'seventy',
   8: 'eighty',
   9: 'ninety',
-};
+}
 
-const build2DigitNum = (num) => {
+const build2DigitNum = num => {
   if (num <= 19) {
-    return baseDigitMap[num];
+    return baseDigitMap[num]
   }
-  const nums = `${num}`.split('');
-  return `${tensDigitMap[nums[0]]}${nums[1] !== '0' ? `-${baseDigitMap[nums[1]]}` : ''}`;
-};
+  const nums = `${num}`.split('')
+  return `${tensDigitMap[nums[0]]}${nums[1] !== '0' ? `-${baseDigitMap[nums[1]]}` : ''}`
+}
 
-const build3DigitNum = (num) => {
-  const nums = `${num}`.split('');
-  const twoDigitNum = parseInt(nums[1] + nums[2]);
-  return `${baseDigitMap[nums[0]]} hundred${twoDigitNum > 0 ? ` and ${build2DigitNum(twoDigitNum)}` : ''} `;
-};
+const build3DigitNum = num => {
+  const nums = `${num}`.split('')
+  const twoDigitNum = parseInt(nums[1] + nums[2])
+  return `${baseDigitMap[nums[0]]} hundred${twoDigitNum > 0 ? ` and ${build2DigitNum(twoDigitNum)}` : ''} `
+}
 
 const verbalizeNumber = (num: number) => {
   if (num <= 99) {
-    return build2DigitNum(num);
+    return build2DigitNum(num)
   }
   if (num <= 999) {
-    return build3DigitNum(num);
+    return build3DigitNum(num)
   }
-  return 'one thousand';
-};
+  return 'one thousand'
+}
 
 export const numberLetterCounts = () => {
-  const words = [];
+  const words = []
   for (let x = 1; x <= 1000; x++) {
-    words.push(verbalizeNumber(x));
+    words.push(verbalizeNumber(x))
   }
-  return words.join('').replace(/ /g, '').replace(/-/g, '').length;
-};
+  return words.join('').replace(/ /g, '').replace(/-/g, '').length
+}

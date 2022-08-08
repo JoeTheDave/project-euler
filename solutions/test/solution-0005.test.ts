@@ -1,8 +1,8 @@
-import { smallestMultiple } from '../proj-0005/index';
+import { smallestMultiple } from '../proj-0005/index'
 
 describe('Solution for Smallest Multiple', () => {
-  const answer = smallestMultiple();
+  const answer = smallestMultiple()
   it('Should have the correct result', () => {
-    expect(answer).toBe(232792560);
-  });
-});
+    expect(answer).toBe(232792560)
+  })
+})

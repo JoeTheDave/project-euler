@@ -1,7 +1,7 @@
 // Large Sum
 // https://projecteuler.net/problem=13
 
-import { addLargeNumbers } from '../util';
+import { addLargeNumbers } from '../util'
 
 const largeNumbers = [
   '37107287533902102798797998220837590246510135740250',
@@ -104,12 +104,12 @@ const largeNumbers = [
   '72107838435069186155435662884062257473692284509516',
   '20849603980134001723930671666823555245252804609722',
   '53503534226472524250874054075591789781264330331690',
-];
+]
 
 export const largeSum = () => {
   return largeNumbers
     .reduce((sum, num) => addLargeNumbers(sum, num), '0')
     .split('')
     .splice(0, 10)
-    .join('');
-};
+    .join('')
+}
