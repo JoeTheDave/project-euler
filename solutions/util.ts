@@ -179,3 +179,17 @@ export const sumofDivisors = (num: number) =>
   getDivisorsList(num)
     .slice(0, -1)
     .reduce((sum, num) => sum + num, 0)
+
+export const isPandigital = (num: number | string) => {
+  const signature = `${num}`
+  let result = signature.length === 9
+  if (result) {
+    for (let i = 1; i <= 9; i++) {
+      if (!signature.includes(`${i}`)) {
+        result = false
+        break
+      }
+    }
+  }
+  return result
+}
