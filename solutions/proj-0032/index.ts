@@ -6,9 +6,10 @@ import { isPandigital } from '../util'
 export const pandigitalProducts = () => {
   const products = {}
   for (let a = 1; a <= 2000; a++) {
-    for (let b = 1; b <= 2000; b++) {
+    for (let b = 1; b <= a; b++) {
       const p = a * b
-      if (isPandigital(`${a}${b}${p}`)) {
+      const signature = `${a}${b}${p}`
+      if (signature.length === 9 && isPandigital(signature)) {
         products[p] = true
       }
     }

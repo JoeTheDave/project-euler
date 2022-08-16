@@ -182,13 +182,47 @@ export const sumofDivisors = (num: number) =>
 
 export const isPandigital = (num: number | string) => {
   const signature = `${num}`
-  let result = signature.length === 9
+  let result = true
   if (result) {
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= signature.length; i++) {
       if (!signature.includes(`${i}`)) {
         result = false
         break
       }
+    }
+  }
+  return result
+}
+
+export const isPrime = num => {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+    if (num % i === 0) {
+      return false
+    }
+  }
+  return num > 1
+}
+
+export const pandigitalPermutator = seed => {
+  let items = `${seed}`.split('')
+  let result = [seed],
+    c = new Array(items.length).fill(0),
+    i = 1,
+    k,
+    p
+
+  while (i < items.length) {
+    if (c[i] < i) {
+      k = i % 2 && c[i]
+      p = items[i]
+      items[i] = items[k]
+      items[k] = p
+      ++c[i]
+      i = 1
+      result.push(parseInt(items.join('')))
+    } else {
+      c[i] = 0
+      ++i
     }
   }
   return result
