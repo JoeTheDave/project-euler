@@ -203,6 +203,13 @@ export const isPrime = num => {
   return num > 1
 }
 
+export function isPrime2(num) {
+  if (num == 2 || num == 3) return true
+  if (num <= 1 || num % 2 == 0 || num % 3 == 0) return false
+  for (let i = 5; i * i <= num; i += 6) if (num % i == 0 || num % (i + 2) == 0) return false
+  return true
+}
+
 export const pandigitalPermutator = seed => {
   let items = `${seed}`.split('')
   let result = [seed],
@@ -227,3 +234,8 @@ export const pandigitalPermutator = seed => {
   }
   return result
 }
+
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+export const generateWordScore = (name: string) =>
+  name.split('').reduce((sum, letter) => sum + alphabet.indexOf(letter) + 1, 0)
