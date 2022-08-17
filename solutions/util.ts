@@ -210,9 +210,9 @@ export function isPrime2(num) {
   return true
 }
 
-export const pandigitalPermutator = seed => {
+export const pandigitalPermutator = (seed: number, asStrings: boolean = false) => {
   let items = `${seed}`.split('')
-  let result = [seed],
+  let result: (string | number)[] = [asStrings ? `${seed}` : seed],
     c = new Array(items.length).fill(0),
     i = 1,
     k,
@@ -226,7 +226,7 @@ export const pandigitalPermutator = seed => {
       items[k] = p
       ++c[i]
       i = 1
-      result.push(parseInt(items.join('')))
+      result.push(asStrings ? items.join('') : parseInt(items.join('')))
     } else {
       c[i] = 0
       ++i
